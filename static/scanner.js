@@ -3,9 +3,7 @@ function onScanSuccess(decodedText, decodedResult) {
 
   console.log("ISBN:", decodedText);
 
-  // document.getElementById("result").innerHTML = "ISBN: " + decodedText;
-  document.getElementById("result").innerHTML =
-    "<a class='scan-again' href='#' onclick='window.location.reload(); return false;'>Scan another book</a>";
+  
   document.getElementById("scanbook").innerHTML = "";
   // Stop scanning after first successful scan
   html5QrCode.stop();
@@ -55,9 +53,16 @@ function onScanSuccess(decodedText, decodedResult) {
         price +
         "</div></div>";
     });
-
-  const element = document.querySelector(".endresult");
+    // document.getElementById("result").innerHTML = "ISBN: " + decodedText;
+  document.getElementById("result").innerHTML = ""
+    
+  document.getElementById("anotherbook").innerHTML = "<a class='scan-again' href='#' onclick='window.location.reload(); return false;'>Scan another book</a>";
+  
+  
+    const element = document.querySelector(".endresult");
   element.classList.toggle("active");
+
+  
 }
 
 const html5QrCode = new Html5Qrcode("reader");
