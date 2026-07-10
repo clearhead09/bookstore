@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# IDE settings
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# SQLite databases (if you experiment with SQLite)
+*.db
+
+# Logs
+*.log
