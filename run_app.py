@@ -12,7 +12,11 @@ def open_app():
     # Open the main app file to run Flask
     call(["python", "app.py"])
 
+
+
 if __name__ == "__main__":
+    # Start the database server
+
     # Start ngrok in a separate thread
     ngrok_thread = threading.Thread(target=start_ngrok, daemon=True)
     ngrok_thread.start()
