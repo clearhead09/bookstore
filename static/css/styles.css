@@ -73,7 +73,7 @@ a.title-link:hover {
   font-size: 1.5rem;
   text-decoration: none;
   color: #5b5b5b;
-  width: 200px;
+  width: 80vw;
   margin: 0 auto;
   background-color: #add8e6;
   padding: 20px;
@@ -84,8 +84,15 @@ a.title-link:hover {
   border-radius: 10px;
 }
 
+.centered {
+  margin: 0 auto;
+}
+
 
 @media (max-width: 600px) {
+  body {
+    font-size: 1.5rem;
+  }
   .endresult.active {
   width: 80vw;
   height: 70vh;
@@ -115,5 +122,34 @@ a.title-link:hover {
   }
   #anotherbook {
     margin: 0 auto;
+  }
+
+  .add_book_form {
+    width: 80vw;
+    height: 70vh;
+  }
+  .add_book_text_field {
+    margin-top: 10px;
+    width: 80vw;
+    height: 40px;
+    background-color: #fffdfd;
+    border-radius: 10px;
+    border: 1px solid #959393;
+  }
+  .add_book_btn {
+    font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #5b5b5b;
+  width: 200px;
+  margin: 0 auto;
+  background-color: #add8e6;
+  padding: 20px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
   }
 }

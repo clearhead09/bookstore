@@ -27,6 +27,7 @@ function onScanSuccess(decodedText, decodedResult) {
       let cover;
       let price;
       let author;
+      let bookNotFound = false;
       if (data.cover == "") {
         cover = "";
       } else {
@@ -39,9 +40,28 @@ function onScanSuccess(decodedText, decodedResult) {
       }
       if (data.author == "") {
         author = "";
+        bookNotFound = true;
       } else {
         author = data.author;
       }
+      if(bookNotFound){
+        document.getElementById("book").innerHTML = `
+        <div class='not-found'>
+        <h2 class="centered">Book not found</h2>
+        <div class="spacer"></div>
+        <form action="/addbook" method="post" class"add_book_form">
+        Title: <input type="text" name="title" class="add_book_text_field"><br />
+        Author: <input type="text" name="author" class="add_book_text_field"><br />
+        Price: <input type="text" name="price" class="add_book_text_field"><br />
+        Cover: <input type="text" name="cover" class="add_book_text_field"><br />
+        ISBN: <input type="text" name="isbn" value="${decodedText}" readonly class="add_book_text_field"><br />
+        <div class="spacer"></div>
+        <input type="submit" value="Add Book" class="add_book_btn">
+        </form>
+        </div>`;
+        
+      } else {
+        
       document.getElementById("book").innerHTML =
         "<div>" +
         cover +
@@ -52,6 +72,7 @@ function onScanSuccess(decodedText, decodedResult) {
         "<br /> " +
         price +
         "</div></div>";
+      }
     });
     // document.getElementById("result").innerHTML = "ISBN: " + decodedText;
   document.getElementById("result").innerHTML = ""
